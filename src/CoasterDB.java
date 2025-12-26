@@ -1,7 +1,7 @@
 import java.io.File;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.*;
@@ -9,9 +9,8 @@ import tools.jackson.databind.*;
 public class CoasterDB {
 
     HashSet<Coaster> coasters;
-    List<Coaster> tempList;
     Random random;
-    boolean log = false;
+    boolean log;
 
     public CoasterDB(String source, boolean log) {
         ObjectMapper mapper = new ObjectMapper();
@@ -96,6 +95,19 @@ public class CoasterDB {
         int index = this.random.nextInt(0, this.coasters.size());
         Coaster[] coasterArray = coasters.toArray(new Coaster[0]);
         return coasterArray[index];
+    }
+
+    public List<Coaster> getTopCoasters(int amount) {
+        List<Coaster> coasterList = new ArrayList<>(coasters);
+        List<Coaster> topCoasters = new ArrayList<>();
+        coasterList.sort(Comparator.comparingInt(c -> c.rank != null ? c.rank : Integer.MAX_VALUE));
+
+        int index = 0;
+        while (topCoasters.size() < amount || coasterList.size() == topCoasters.size()) {
+            topCoasters.add(coasterList.get(index));
+            index++;
+        }
+        return topCoasters;
     }
 
     public void keepHeight(Order order,int height) {
@@ -193,6 +205,132 @@ public class CoasterDB {
         }
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't stand in country +" + order.name() + " " + country);
     }
+
+    public double getAverageHeight() {
+        int size = this.coasters.size();
+        int sum = 0;
+        for(Coaster c : this.coasters) {
+            if (c.height == null) {
+                size--;
+                continue;
+            }
+            sum += c.height;
+        }
+        return (double) sum /size;
+    }
+
+    public double getAverageLength() {
+        int size = this.coasters.size();
+        int sum = 0;
+        for(Coaster c : this.coasters) {
+            if (c.length == null) {
+                size--;
+                continue;
+            }
+            sum += c.length;
+        }
+        return (double) sum /size;
+    }
+
+    public double getAverageSpeed() {
+        int size = this.coasters.size();
+        int sum = 0;
+        for(Coaster c : this.coasters) {
+            if (c.speed == null) {
+                size--;
+                continue;
+            }
+            sum += c.speed;
+        }
+        return (double) sum /size;
+    }
+
+    public double getAverageInversions() {
+        int size = this.coasters.size();
+        int sum = 0;
+        for(Coaster c : this.coasters) {
+            if (c.inversionsNumber == null) {
+                size--;
+                continue;
+            }
+            sum += c.inversionsNumber;
+        }
+        return (double) sum /size;
+    }
+
+    public String getMostCommonManufacturer() {
+        return mostFrequent(this.coasters, coaster -> coaster.manufacturer);
+    }
+
+    public String getMostCommonSeating() {
+        return mostFrequent(this.coasters, coaster -> coaster.seatingType);
+    }
+
+    public String getMostCommonCountry() {
+        return mostFrequent(this.coasters, coaster -> coaster.country);
+    }
+
+    private static <T> T mostFrequent(
+            Collection<Coaster> coasters,
+            Function<Coaster, T> extractor
+    ) {
+        return coasters.stream()
+                .map(extractor)
+                .filter(Objects::nonNull)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
+
+    private class CoasterProfile {
+        public double avgSpeed;
+        public double avgHeight;
+        public double avgLength;
+
+        public String manufacturer;
+        public String seatingType;
+        public String country;
+    }
+
+    private CoasterProfile buildAverageCoasterProfile() {
+        CoasterProfile p = new CoasterProfile();
+
+        p.avgSpeed  = this.getAverageSpeed();
+        p.avgHeight = getAverageHeight();
+        p.avgLength = getAverageLength();
+
+        p.manufacturer = getMostCommonManufacturer();
+        p.seatingType  = getMostCommonSeating();
+        p.country      = getMostCommonCountry();
+
+        return p;
+    }
+
+    private double distance(Coaster c, CoasterProfile p) {
+        double dist = 0;
+        if (c.speed != null) dist += Math.pow(c.speed - p.avgSpeed, 2);
+        if (c.height != null) dist += Math.pow(c.height - p.avgHeight, 2);
+        if (c.length != null) dist += Math.pow(c.length - p.avgLength, 2);
+        if (Objects.equals(c.manufacturer, p.manufacturer)) dist -= 1000;
+        if (Objects.equals(c.seatingType, p.seatingType)) dist -= 500;
+        if (Objects.equals(c.country, p.country)) dist -= 300;
+        return dist;
+    }
+
+    public Coaster findMostAverageCoaster() {
+        CoasterProfile profile = buildAverageCoasterProfile();
+
+        return coasters.stream()
+                .min(Comparator.comparingDouble(c -> distance(c, profile)))
+                .orElse(null);
+    }
+
+
 
     public enum Order {
         EQUAL,

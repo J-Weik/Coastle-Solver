@@ -130,6 +130,10 @@ public class Coaster {
 
     // ---------- TO-STRING ----------
     public String toString() {
+        return this.name + " at " + this.park;
+    }
+
+    public String getInfo() {
         String str = "Name: " + this.name + "\n" + "Hersteller: " + this.manufacturer + "\n" + "Baujahr: " + this.openingYear + "\n" + "Höhe: " + this.height + "\n";
         str += "Länge: " + this.length + "\n" + "Geschwindigkeit: " + this.speed + "\n" + "Park: " + this.park + "\n" + "Land: " + this.country + "\n" + "Status: " + this.status + "\n";
         return str;

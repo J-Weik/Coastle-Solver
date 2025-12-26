@@ -176,8 +176,6 @@ public class APIService {
             throw new RuntimeException("Fehler beim Parsen des Coasters", e);
         }
     }
-
-
     public List<Coaster> getFirstCoasters() {
         List<Coaster> result = new ArrayList<>();
         String url = BASE_URL + "?page=1";
@@ -213,7 +211,6 @@ public class APIService {
             result.add(getCoaster(coaster.id));
             System.out.println("got Coaster: " + coaster.name + ", " + coaster.id + "/6819" );
         }
-
         return result;
     }
 
