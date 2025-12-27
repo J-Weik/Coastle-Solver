@@ -99,15 +99,9 @@ public class CoasterDB {
 
     public List<Coaster> getTopCoasters(int amount) {
         List<Coaster> coasterList = new ArrayList<>(coasters);
-        List<Coaster> topCoasters = new ArrayList<>();
         coasterList.sort(Comparator.comparingInt(c -> c.rank != null ? c.rank : Integer.MAX_VALUE));
-
-        int index = 0;
-        while (topCoasters.size() < amount || coasterList.size() == topCoasters.size()) {
-            topCoasters.add(coasterList.get(index));
-            index++;
-        }
-        return topCoasters;
+        int limit = Math.min(amount, coasterList.size());
+        return coasterList.subList(0, limit);
     }
 
     public void keepHeight(Order order,int height) {

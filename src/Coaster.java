@@ -134,8 +134,23 @@ public class Coaster {
     }
 
     public String getInfo() {
-        String str = "Name: " + this.name + "\n" + "Hersteller: " + this.manufacturer + "\n" + "Baujahr: " + this.openingYear + "\n" + "Höhe: " + this.height + "\n";
-        str += "Länge: " + this.length + "\n" + "Geschwindigkeit: " + this.speed + "\n" + "Park: " + this.park + "\n" + "Land: " + this.country + "\n" + "Status: " + this.status + "\n";
-        return str;
+        return
+        "Name: "+ name+"\n"+
+        "Park: "+ park+"\n"+
+        "Land: "+ country+"\n"+
+        "Geschwindigkeit: "+ speed+" km/h\n"+
+        "Länge: "+ length+" m\n"+
+        "Länge: "+ height+" m\n"+
+        "Inversionen: "+ inversionsNumber+"\n"+
+        "Hersteller: "+ manufacturer+"\n"+
+        "Material: "+ material+"\n"+
+        "Sitze: "+ seatingType+"\n"+
+        "Modell: "+ model+"\n"+
+        "Restraints: "+ restraint+"\n"+
+        "Antrieb: "+ launch+"\n"+
+        "Eröffnet: "+ openingYear+"\n"+
+        "Score: " + score+"\n"+
+        "Rang: " + rank+"\n"+
+        "Status: "+ status;
     }
 }
