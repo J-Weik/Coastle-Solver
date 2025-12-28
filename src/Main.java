@@ -11,16 +11,16 @@ public class Main {
 
         // ------------------------SETTINGS-------------------------
         final guessedCoasterChooser chooser = guessedCoasterChooser.TOP_RATED;
-        final boolean outputRemovedCoasterInfo = false;
-        boolean removeUnrankedCoasters = false;
+        final boolean outputRemovedCoasterInfo = true;
+        boolean removeUnrankedCoasters = true;
         final boolean removeInclompleteCoasters = true;
 
-        if(chooser== guessedCoasterChooser.TOP_RATED) removeUnrankedCoasters = true;
+        // if(chooser == guessedCoasterChooser.TOP_RATED) removeUnrankedCoasters = true;
         // ---------------------------------------------------------
 
         final Scanner sc = new Scanner(System.in);
         final String DBPath = "coasters.json";
-        CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo);
+        CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo, !removeInclompleteCoasters);
 
 
         // remove bad coasters

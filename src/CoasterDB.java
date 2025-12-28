@@ -11,8 +11,9 @@ public class CoasterDB {
     HashSet<Coaster> coasters;
     Random random;
     boolean log;
+    boolean nullSafe;
 
-    public CoasterDB(String source, boolean log) {
+    public CoasterDB(String source, boolean log, boolean nullSafe) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             List<Coaster> tempList = mapper.readValue(
@@ -24,6 +25,7 @@ public class CoasterDB {
             throw new RuntimeException("Fehler beim Einlesen der Coaster-JSON", e);
         }
         this.log = log;
+        this.nullSafe = nullSafe;
         random = new Random(System.currentTimeMillis());
     }
 
@@ -106,85 +108,45 @@ public class CoasterDB {
 
     public void keepHeight(Order order,int height) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> c.height != height);
-            case LESS_THAN -> coasters.removeIf(c -> c.height >= height);
-            case GREATER_THAN -> coasters.removeIf(c -> c.height <= height);
-            case LESS_EQUAL_THAN -> coasters.removeIf(c -> c.height < height);
-            case GREATER_EQUAL_THAN -> coasters.removeIf(c -> c.height > height);
-            case NOT_EQUAL -> coasters.removeIf(c -> c.height == height);
-            default -> throw new RuntimeException("Unhandled order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.height, height, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have a height +" + order.name() + " " + height);
     }
 
     public void keepLength(Order order, int length) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> c.length != length);
-            case LESS_THAN -> coasters.removeIf(c -> c.length >= length);
-            case GREATER_THAN -> coasters.removeIf(c -> c.length <= length);
-            case LESS_EQUAL_THAN -> coasters.removeIf(c -> c.length < length);
-            case GREATER_EQUAL_THAN -> coasters.removeIf(c -> c.length > length);
-            case NOT_EQUAL -> coasters.removeIf(c -> c.length == length);
-            default -> throw new RuntimeException("Unhandled order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.length, length, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have a length +" + order.name() + " " + length);
     }
 
     public void keepSpeed(Order order, int speed) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> c.speed != speed);
-            case LESS_THAN -> coasters.removeIf(c -> c.speed >= speed);
-            case GREATER_THAN -> coasters.removeIf(c -> c.speed <= speed);
-            case LESS_EQUAL_THAN -> coasters.removeIf(c -> c.speed < speed);
-            case GREATER_EQUAL_THAN -> coasters.removeIf(c -> c.speed > speed);
-            case NOT_EQUAL -> coasters.removeIf(c -> c.speed == speed);
-            default -> throw new RuntimeException("Unhandled order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.speed, speed, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that dont have a speed +" + order.name() + " " + speed);
     }
 
     public void keepInversions(Order order, int inversions) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> c.inversionsNumber != inversions);
-            case LESS_THAN -> coasters.removeIf(c -> c.inversionsNumber >= inversions);
-            case GREATER_THAN -> coasters.removeIf(c -> c.inversionsNumber <= inversions);
-            case LESS_EQUAL_THAN -> coasters.removeIf(c -> c.inversionsNumber < inversions);
-            case GREATER_EQUAL_THAN -> coasters.removeIf(c -> c.inversionsNumber > inversions);
-            case NOT_EQUAL -> coasters.removeIf(c -> c.inversionsNumber == inversions);
-            default -> throw new RuntimeException("Unhandled order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.inversionsNumber, inversions, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that dont have inversions +" + order.name() + " " + inversions);
     }
 
     public void keepSeatingType(Order order, String seatingType) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> !c.seatingType.equalsIgnoreCase(seatingType));
-            case NOT_EQUAL -> coasters.removeIf(c -> c.seatingType.equalsIgnoreCase(seatingType));
-            default -> throw new RuntimeException("Wrong order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.seatingType, seatingType, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have seating Type +" + order.name() + " " + seatingType);
     }
 
     public void keepManufacturer(Order order, String manufacturer) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> !c.manufacturer.equalsIgnoreCase(manufacturer));
-            case NOT_EQUAL -> coasters.removeIf(c -> c.manufacturer.equalsIgnoreCase(manufacturer));
-            default -> throw new RuntimeException("Wrong order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.manufacturer, manufacturer, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that aren't manufactured by +" + order.name() + " " + manufacturer);
     }
 
     public void keepStartingChar(Order order, char startingChar) {
         int size = this.coasters.size();
         switch (order) {
-            case EQUAL -> coasters.removeIf(c -> !c.name.startsWith(String.valueOf(startingChar)));
-            case NOT_EQUAL -> coasters.removeIf(c -> c.name.startsWith(String.valueOf(startingChar)));
+            case EQUAL -> coasters.removeIf(c -> c.name != null && !c.name.startsWith(String.valueOf(startingChar).toUpperCase()));
+            case NOT_EQUAL -> coasters.removeIf(c -> c.name != null && c.name.startsWith(String.valueOf(startingChar).toUpperCase()));
             default -> throw new RuntimeException("Wrong order: " + order);
         }
         if(log) System.out.println(size - this.coasters.size() + " coasters removed, that are " + order.name() + " starting with " + startingChar);
@@ -192,11 +154,7 @@ public class CoasterDB {
 
     public void keepCountry(Order order, String country) {
         int size = this.coasters.size();
-        switch (order) {
-            case EQUAL -> coasters.removeIf(c -> !c.country.equalsIgnoreCase(country));
-            case NOT_EQUAL -> coasters.removeIf(c -> c.country.equalsIgnoreCase(country));
-            default -> throw new RuntimeException("Wrong order: " + order);
-        }
+        coasters.removeIf(c -> shouldRemove(c.country, country, order));
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't stand in country +" + order.name() + " " + country);
     }
 
@@ -324,7 +282,26 @@ public class CoasterDB {
                 .orElse(null);
     }
 
+    private boolean shouldRemove(Integer value, int target, Order order) {
+        if (value == null) return !nullSafe; // true -> entfernen, false -> behalten
+        return switch (order) {
+            case EQUAL -> value != target;
+            case NOT_EQUAL -> value == target;
+            case LESS_THAN -> value >= target;
+            case GREATER_THAN -> value <= target;
+            case LESS_EQUAL_THAN -> value > target;
+            case GREATER_EQUAL_THAN -> value < target;
+        };
+    }
 
+    private boolean shouldRemove(String value, String target, Order order) {
+        if (value == null) return !nullSafe; // true -> entfernen, false -> behalten
+        return switch (order) {
+            case EQUAL -> !value.equalsIgnoreCase(target);
+            case NOT_EQUAL -> value.equalsIgnoreCase(target);
+            default -> throw new RuntimeException("Wrong order for String: " + order);
+        };
+    }
 
     public enum Order {
         EQUAL,
