@@ -121,13 +121,13 @@ public class CoasterDB {
     public void keepSpeed(Order order, int speed) {
         int size = this.coasters.size();
         coasters.removeIf(c -> shouldRemove(c.speed, speed, order));
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that dont have a speed +" + order.name() + " " + speed);
+        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have a speed +" + order.name() + " " + speed);
     }
 
     public void keepInversions(Order order, int inversions) {
         int size = this.coasters.size();
         coasters.removeIf(c -> shouldRemove(c.inversionsNumber, inversions, order));
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that dont have inversions +" + order.name() + " " + inversions);
+        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have inversions +" + order.name() + " " + inversions);
     }
 
     public void keepSeatingType(Order order, String seatingType) {
@@ -149,7 +149,7 @@ public class CoasterDB {
             case NOT_EQUAL -> coasters.removeIf(c -> c.name != null && c.name.startsWith(String.valueOf(startingChar).toUpperCase()));
             default -> throw new RuntimeException("Wrong order: " + order);
         }
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed, that are " + order.name() + " starting with " + startingChar);
+        if(log) System.out.println(size - this.coasters.size() + " coasters removed, that aren't " + order.name() + " starting with " + startingChar);
     }
 
     public void keepCountry(Order order, String country) {

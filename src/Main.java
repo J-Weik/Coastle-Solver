@@ -10,25 +10,32 @@ public class Main {
         APIkey = args[0];
 
         // ------------------------SETTINGS-------------------------
-        final guessedCoasterChooser chooser = guessedCoasterChooser.TOP_RATED;
+        final guessedCoasterChooser chooser = guessedCoasterChooser.AVERAGE_COASTER;
         final boolean outputRemovedCoasterInfo = true;
-        boolean removeUnrankedCoasters = true;
-        final boolean removeInclompleteCoasters = true;
+        boolean removeUnrankedCoasters = false;
+        boolean removeInclompleteCoasters = true;
+        boolean startWithDiamondback = false;
 
-        // if(chooser == guessedCoasterChooser.TOP_RATED) removeUnrankedCoasters = true;
         // ---------------------------------------------------------
 
         final Scanner sc = new Scanner(System.in);
         final String DBPath = "coasters.json";
         CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo, !removeInclompleteCoasters);
 
+        // remove bad coasters if they have a chance to be chosen as a guess
+        if (chooser == guessedCoasterChooser.AVERAGE_COASTER || chooser == guessedCoasterChooser.RANDOM) removeInclompleteCoasters = true;
 
         // remove bad coasters
         if(removeInclompleteCoasters) db.removeUncompleteCoasters();
         if(removeUnrankedCoasters) db.removeUnrankedCoasters();
 
         // Choose Diamondback as first coaster
-        Coaster curCoaster = db.findCoaster("Diamondback");
+        Coaster curCoaster;
+        if (!startWithDiamondback) curCoaster = db.findCoaster("Diamondback");
+        else if (chooser == guessedCoasterChooser.TOP_RATED) curCoaster = db.getTopCoasters(1).getFirst();
+        else if (chooser == guessedCoasterChooser.RANDOM) curCoaster = db.randomCoaster();
+        else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = curCoaster = db.findMostAverageCoaster();
+        else curCoaster = db.randomCoaster();
 
         CoasterDB.Order countryOrder;
         CoasterDB.Order manufacturerOrder;
@@ -41,6 +48,7 @@ public class Main {
         String answer = "";
         int guess = 1;
         System.out.println("Type t for correct answer, f for false answer, g for greater than and l for lesser then");
+        System.out.println("Possible Coasters: " + db.coasters.size());
         System.out.println("Guess: " + curCoaster);
         while(db.coasters.size() > 1){
             answer = readValidAnswer(sc);
@@ -60,7 +68,7 @@ public class Main {
             db.keepHeight(heightOrder, curCoaster.height);
             db.keepLength(lengthOrder, curCoaster.length);
             db.keepSpeed(speedOrder, curCoaster.speed);
-            if(guess==3) {
+            if(guess==3 && db.coasters.size() > 1) {
                 System.out.print("what is the first letter of the coaster?: ");
                 db.keepStartingChar(CoasterDB.Order.EQUAL, sc.nextLine().charAt(0));
             }
