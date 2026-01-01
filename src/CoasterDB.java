@@ -81,8 +81,9 @@ public class CoasterDB {
 
     public void removeUncompleteCoasters() {
         int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.name == null || c.height == null || c.inversionsNumber == null || c.speed == null || c.seatingType == null || c.length == null
-        || c.manufacturer == null);
+        this.coasters.removeIf(c -> c.name == null || c.height == null
+            || c.inversionsNumber == null || c.speed == null || c.seatingType == null
+            || c.length == null || c.manufacturer == null);
         if(log) System.out.println(size - this.coasters.size() + " coasters removed that are missing info");
     }
 
@@ -243,6 +244,7 @@ public class CoasterDB {
         public double avgSpeed;
         public double avgHeight;
         public double avgLength;
+        public double avgInversions;
 
         public String manufacturer;
         public String seatingType;
@@ -255,6 +257,7 @@ public class CoasterDB {
         p.avgSpeed  = this.getAverageSpeed();
         p.avgHeight = getAverageHeight();
         p.avgLength = getAverageLength();
+        p.avgInversions = getAverageInversions();
 
         p.manufacturer = getMostCommonManufacturer();
         p.seatingType  = getMostCommonSeating();
@@ -268,6 +271,7 @@ public class CoasterDB {
         if (c.speed != null) dist += Math.pow(c.speed - p.avgSpeed, 2);
         if (c.height != null) dist += Math.pow(c.height - p.avgHeight, 2);
         if (c.length != null) dist += Math.pow(c.length - p.avgLength, 2);
+        if (c.inversionsNumber != null) dist += Math.pow(c.inversionsNumber - p.avgInversions, 500);
         if (Objects.equals(c.manufacturer, p.manufacturer)) dist -= 1000;
         if (Objects.equals(c.seatingType, p.seatingType)) dist -= 500;
         if (Objects.equals(c.country, p.country)) dist -= 300;

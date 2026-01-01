@@ -133,7 +133,7 @@ public class Coaster {
         return this.name + " at " + this.park;
     }
 
-    public String getInfo() {
+    public String printInfo() {
         return
         "Name: "+ name+"\n"+
         "Park: "+ park+"\n"+

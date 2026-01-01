@@ -11,15 +11,21 @@ public class Main {
 
         // ------------------------SETTINGS-------------------------
         final guessedCoasterChooser chooser = guessedCoasterChooser.AVERAGE_COASTER;
-        final boolean outputRemovedCoasterInfo = true;
+        final dataset data = dataset.HARD;
+        final boolean outputRemovedCoasterInfo = false;
         boolean removeUnrankedCoasters = false;
         boolean removeInclompleteCoasters = true;
         boolean startWithDiamondback = false;
 
         // ---------------------------------------------------------
-
+        final String BASE_PATH = "src/datasets/";
         final Scanner sc = new Scanner(System.in);
-        final String DBPath = "coasters.json";
+        String DBPath;
+        switch (data) {
+            case EASY -> DBPath = BASE_PATH + "easy.json";
+            case HARD -> DBPath = BASE_PATH + "hard.json";
+            default -> DBPath = BASE_PATH + "all.json";
+        }
         CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo, !removeInclompleteCoasters);
 
         // remove bad coasters if they have a chance to be chosen as a guess
@@ -31,7 +37,7 @@ public class Main {
 
         // Choose Diamondback as first coaster
         Coaster curCoaster;
-        if (!startWithDiamondback) curCoaster = db.findCoaster("Diamondback");
+        if (startWithDiamondback) curCoaster = db.findCoaster("Diamondback");
         else if (chooser == guessedCoasterChooser.TOP_RATED) curCoaster = db.getTopCoasters(1).getFirst();
         else if (chooser == guessedCoasterChooser.RANDOM) curCoaster = db.randomCoaster();
         else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = curCoaster = db.findMostAverageCoaster();
@@ -94,10 +100,16 @@ public class Main {
         AVERAGE_COASTER
     }
 
+    public enum dataset {
+        EASY,
+        HARD,
+        ALL
+    }
+
     public static void updateCoasterDB() {
         APIService service =
                 new APIService(APIkey);
-        service.saveCoastersToFile(service.getAllCoasters(), "coasters.json");
+        service.saveCoastersToFile(service.getAllCoasters(), "all.json");
     }
 
     public static void testAPI(){
@@ -153,6 +165,6 @@ public class Main {
         System.out.println("Most Common Manufacturer: " + db.getMostCommonManufacturer());
         System.out.println("Most Common Country: " + db.getMostCommonCountry());
         System.out.println("Most Common Seating: " + db.getMostCommonSeating());
-        System.out.println("Most Average Coaster:\n" + db.findMostAverageCoaster().getInfo());
+        System.out.println("Most Average Coaster:\n" + db.findMostAverageCoaster().printInfo());
     }
 }
