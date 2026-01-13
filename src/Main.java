@@ -10,7 +10,7 @@ public class Main {
         APIkey = args[0];
 
         // ------------------------SETTINGS-------------------------
-        final guessedCoasterChooser chooser = guessedCoasterChooser.AVERAGE_COASTER;
+        final guessedCoasterChooser chooser = guessedCoasterChooser.BEST_SPLITTER;
         final dataset data = dataset.HARD;
         final boolean outputRemovedCoasterInfo = false;
         boolean removeUnrankedCoasters = false;
@@ -29,7 +29,9 @@ public class Main {
         CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo, !removeInclompleteCoasters);
 
         // remove bad coasters if they have a chance to be chosen as a guess
-        if (chooser == guessedCoasterChooser.AVERAGE_COASTER || chooser == guessedCoasterChooser.RANDOM) removeInclompleteCoasters = true;
+        if (chooser == guessedCoasterChooser.AVERAGE_COASTER
+                || chooser == guessedCoasterChooser.BEST_SPLITTER
+                || chooser == guessedCoasterChooser.RANDOM) removeInclompleteCoasters = true;
 
         // remove bad coasters
         if(removeInclompleteCoasters) db.removeUncompleteCoasters();
@@ -40,7 +42,8 @@ public class Main {
         if (startWithDiamondback) curCoaster = db.findCoaster("Diamondback");
         else if (chooser == guessedCoasterChooser.TOP_RATED) curCoaster = db.getTopCoasters(1).getFirst();
         else if (chooser == guessedCoasterChooser.RANDOM) curCoaster = db.randomCoaster();
-        else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = curCoaster = db.findMostAverageCoaster();
+        else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = db.findMostAverageCoaster();
+        else if (chooser == guessedCoasterChooser.BEST_SPLITTER) curCoaster = db.findBestSplitCoaster();
         else curCoaster = db.randomCoaster();
 
         CoasterDB.Order countryOrder;
@@ -97,7 +100,8 @@ public class Main {
     public enum guessedCoasterChooser {
         TOP_RATED,
         RANDOM,
-        AVERAGE_COASTER
+        AVERAGE_COASTER,
+        BEST_SPLITTER
     }
 
     public enum dataset {
@@ -166,5 +170,10 @@ public class Main {
         System.out.println("Most Common Country: " + db.getMostCommonCountry());
         System.out.println("Most Common Seating: " + db.getMostCommonSeating());
         System.out.println("Most Average Coaster:\n" + db.findMostAverageCoaster().printInfo());
+        System.out.println("AmountOfSeatingTypes: " + db.countBy(coaster -> coaster.seatingType));
+        System.out.println("AmountOfManufactures: " + db.countBy(coaster -> coaster.manufacturer));
+        System.out.println("AmountOfCountry: " + db.countBy(coaster -> coaster.country));
+        System.out.println("AmountOfInversions: " + db.countBy(coaster -> coaster.inversionsNumber));
+        System.out.println("AmountOfCountry: " + db.countBy(coaster -> coaster.country));
     }
 }

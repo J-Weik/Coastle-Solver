@@ -2,7 +2,6 @@ import java.io.File;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.*;
 
@@ -219,6 +218,44 @@ public class CoasterDB {
         return mostFrequent(this.coasters, coaster -> coaster.seatingType);
     }
 
+    public <T> Map<T, Integer> countBy(Function<Coaster, T> classifier){
+        Map<T ,Integer> counts = new HashMap<>();
+        for(Coaster c : this.coasters) {
+            T key = classifier.apply(c);
+            counts.merge(key, 1, Integer::sum);
+        }
+        return counts;
+    }
+
+    private double rarityPenalty(String value, Map<String, Integer> freq) {
+        if (value == null) return 0;
+        int total = freq.values().stream().mapToInt(i -> i).sum();
+        int f = freq.getOrDefault(value, 1);
+        return Math.log((double) total / f);
+    }
+
+    private double splitScore(Coaster c, CoasterProfile p,
+                              Map<String,Integer> seatingFreq,
+                              Map<String,Integer> manufacturerFreq,
+                              Map<String,Integer> countryFreq) {
+
+        double score = 0;
+
+        // annährung an median
+        if (c.speed != null)      score += Math.abs(c.speed - p.avgSpeed);
+        if (c.height != null)     score += Math.abs(c.height - p.avgHeight);
+        if (c.length != null)     score += Math.abs(c.length - p.avgLength);
+        if (c.inversionsNumber != null)
+            score += Math.abs(c.inversionsNumber - p.avgInversions) * 2;
+
+        // seltene typen sind schlechte spalter
+        score += rarityPenalty(c.seatingType, seatingFreq) * 3.0;
+        score += rarityPenalty(c.manufacturer, manufacturerFreq) * 2.0;
+        score += rarityPenalty(c.country, countryFreq) * 4.0;
+
+        return score;
+    }
+
     public String getMostCommonCountry() {
         return mostFrequent(this.coasters, coaster -> coaster.country);
     }
@@ -271,7 +308,7 @@ public class CoasterDB {
         if (c.speed != null) dist += Math.pow(c.speed - p.avgSpeed, 2);
         if (c.height != null) dist += Math.pow(c.height - p.avgHeight, 2);
         if (c.length != null) dist += Math.pow(c.length - p.avgLength, 2);
-        if (c.inversionsNumber != null) dist += Math.pow(c.inversionsNumber - p.avgInversions, 500);
+        if (c.inversionsNumber != null) dist += Math.pow(c.inversionsNumber - p.avgInversions, 200);
         if (Objects.equals(c.manufacturer, p.manufacturer)) dist -= 1000;
         if (Objects.equals(c.seatingType, p.seatingType)) dist -= 500;
         if (Objects.equals(c.country, p.country)) dist -= 300;
@@ -284,6 +321,17 @@ public class CoasterDB {
         return coasters.stream()
                 .min(Comparator.comparingDouble(c -> distance(c, profile)))
                 .orElse(null);
+    }
+
+    public Coaster findBestSplitCoaster() {
+        CoasterProfile p = buildAverageCoasterProfile();
+        Map<String, Integer> seatingFreq = countBy(c->c.seatingType);
+        Map<String, Integer> manufacturerFreq = countBy(c->c.manufacturer);
+        Map<String, Integer> countryFreq = countBy(c->c.country);
+
+        return coasters.stream().min(Comparator.comparingDouble(
+                c->splitScore(c, p, seatingFreq, manufacturerFreq, countryFreq)
+        )).orElse(null);
     }
 
     private boolean shouldRemove(Integer value, int target, Order order) {
