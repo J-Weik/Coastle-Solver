@@ -28,6 +28,13 @@ public class CoasterDB {
         random = new Random(System.currentTimeMillis());
     }
 
+    public CoasterDB(CoasterDB source) {
+        coasters = new HashSet<>(source.coasters);
+        log = source.log;
+        nullSafe = source.nullSafe;
+        random = new Random(System.currentTimeMillis());
+    }
+
     public void insertCoaster(Coaster coaster) {
         coasters.add(coaster);
     }
@@ -237,21 +244,22 @@ public class CoasterDB {
     private double splitScore(Coaster c, CoasterProfile p,
                               Map<String,Integer> seatingFreq,
                               Map<String,Integer> manufacturerFreq,
-                              Map<String,Integer> countryFreq) {
+                              Map<String,Integer> countryFreq,
+                              Weights w) {
 
         double score = 0;
 
         // annährung an median
-        if (c.speed != null)      score += Math.abs(c.speed - p.avgSpeed);
-        if (c.height != null)     score += Math.abs(c.height - p.avgHeight);
-        if (c.length != null)     score += Math.abs(c.length - p.avgLength);
+        if (c.speed != null)      score += Math.abs(c.speed - p.avgSpeed) * w.speed;
+        if (c.height != null)     score += Math.abs(c.height - p.avgHeight) * w.height;
+        if (c.length != null)     score += Math.abs(c.length - p.avgLength) * w.length;
         if (c.inversionsNumber != null)
-            score += Math.abs(c.inversionsNumber - p.avgInversions) * 2;
+            score += Math.abs(c.inversionsNumber - p.avgInversions) * w.inversions; //2
 
         // seltene typen sind schlechte spalter
-        score += rarityPenalty(c.seatingType, seatingFreq) * 3.0;
-        score += rarityPenalty(c.manufacturer, manufacturerFreq) * 2.0;
-        score += rarityPenalty(c.country, countryFreq) * 4.0;
+        score += rarityPenalty(c.seatingType, seatingFreq) * w.seating; //3
+        score += rarityPenalty(c.manufacturer, manufacturerFreq) * w.manufacturer; //2
+        score += rarityPenalty(c.country, countryFreq) * w.country; //4
 
         return score;
     }
@@ -323,14 +331,14 @@ public class CoasterDB {
                 .orElse(null);
     }
 
-    public Coaster findBestSplitCoaster() {
+    public Coaster findBestSplitCoaster(Weights w) {
         CoasterProfile p = buildAverageCoasterProfile();
         Map<String, Integer> seatingFreq = countBy(c->c.seatingType);
         Map<String, Integer> manufacturerFreq = countBy(c->c.manufacturer);
         Map<String, Integer> countryFreq = countBy(c->c.country);
 
         return coasters.stream().min(Comparator.comparingDouble(
-                c->splitScore(c, p, seatingFreq, manufacturerFreq, countryFreq)
+                c->splitScore(c, p, seatingFreq, manufacturerFreq, countryFreq, w)
         )).orElse(null);
     }
 
@@ -353,6 +361,26 @@ public class CoasterDB {
             case NOT_EQUAL -> value.equalsIgnoreCase(target);
             default -> throw new RuntimeException("Wrong order for String: " + order);
         };
+    }
+
+    public Coaster findCoasterById(int id) {
+        for (Coaster c : coasters) {
+            if (c.id == id) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public Coaster findCoasterByName(String name) {
+        if (name == null) return null;
+
+        for (Coaster c : coasters) {
+            if (c.name != null && c.name.equalsIgnoreCase(name)) {
+                return c;
+            }
+        }
+        return null;
     }
 
     public enum Order {

@@ -1,3 +1,5 @@
+import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -27,6 +29,7 @@ public class Main {
             default -> DBPath = BASE_PATH + "all.json";
         }
         CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo, !removeInclompleteCoasters);
+        Weights weights = new Weights(1.2,1,0.7,0.5,1,0.8,1);
 
         // remove bad coasters if they have a chance to be chosen as a guess
         if (chooser == guessedCoasterChooser.AVERAGE_COASTER
@@ -43,7 +46,7 @@ public class Main {
         else if (chooser == guessedCoasterChooser.TOP_RATED) curCoaster = db.getTopCoasters(1).getFirst();
         else if (chooser == guessedCoasterChooser.RANDOM) curCoaster = db.randomCoaster();
         else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = db.findMostAverageCoaster();
-        else if (chooser == guessedCoasterChooser.BEST_SPLITTER) curCoaster = db.findBestSplitCoaster();
+        else if (chooser == guessedCoasterChooser.BEST_SPLITTER) curCoaster = db.findBestSplitCoaster(weights);
         else curCoaster = db.randomCoaster();
 
         CoasterDB.Order countryOrder;
