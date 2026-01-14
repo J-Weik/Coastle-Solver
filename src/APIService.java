@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -26,17 +25,6 @@ public class APIService {
         }
     }
 
-    public List<Coaster> loadCoastersFromFile(String filePath) {
-        try {
-            return mapper.readValue(
-                    new File(filePath),
-                    new TypeReference<List<Coaster>>() {}
-            );
-        } catch (Exception e) {
-            throw new RuntimeException("Fehler beim Laden der Coasters", e);
-        }
-    }
-
     private static final String BASE_URL = "https://captaincoaster.com/api/coasters";
 
     private final HttpClient client;
@@ -48,8 +36,6 @@ public class APIService {
         this.client = HttpClient.newHttpClient();
         this.mapper = new ObjectMapper();
     }
-
-
 
     public Park getParkById(int id) {
         String url = "https://captaincoaster.com/api/parks/" + id;
@@ -176,8 +162,7 @@ public class APIService {
             throw new RuntimeException("Fehler beim Parsen des Coasters", e);
         }
     }
-    public List<Coaster> getFirstCoasters() {
-        List<Coaster> result = new ArrayList<>();
+    public void getFirstCoasters() {
         String url = BASE_URL + "?page=1";
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -185,8 +170,7 @@ public class APIService {
                 .header("Accept", "application/ld+json")
                 .GET()
                 .build();
-        HttpResponse<String> response =
-                null;
+        HttpResponse<String> response;
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
@@ -204,14 +188,13 @@ public class APIService {
         List<Coaster> pageCoasters =
                 mapper.readValue(
                         members.toString(),
-                        new TypeReference<List<Coaster>>() {}
+                        new TypeReference<>() {
+                        }
                 );
         System.out.println("loaded " + pageCoasters.size() + " Coasters");
         for (Coaster coaster : pageCoasters) {
-            result.add(getCoaster(coaster.id));
             System.out.println("got Coaster: " + coaster.name + ", " + coaster.id + "/6819" );
         }
-        return result;
     }
 
     public List<Coaster> getAllCoasters() {
@@ -250,7 +233,8 @@ public class APIService {
                     List<Coaster> pageCoasters =
                             mapper.readValue(
                                     members.toString(),
-                                    new TypeReference<List<Coaster>>() {}
+                                    new TypeReference<>() {
+                                    }
                             );
 
                     lowDetailCoasters.addAll(pageCoasters);

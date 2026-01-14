@@ -1,5 +1,5 @@
 [ {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 28,
   "id" : 3067,
   "inversionsNumber" : 0,
@@ -19,7 +19,7 @@
   "speed" : 83,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 27,
   "id" : 2006,
   "inversionsNumber" : 0,
@@ -39,7 +39,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.china",
+  "country" : "china",
   "height" : 40,
   "id" : 1979,
   "inversionsNumber" : 5,
@@ -59,7 +59,7 @@
   "speed" : 88,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 20,
   "id" : 5387,
   "inversionsNumber" : 0,
@@ -79,7 +79,7 @@
   "speed" : 77,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 11,
   "id" : 5612,
   "inversionsNumber" : 0,
@@ -99,7 +99,7 @@
   "speed" : 58,
   "status" : "status.operating"
 }, {
-  "country" : "country.spain",
+  "country" : "spain",
   "height" : 45,
   "id" : 5521,
   "inversionsNumber" : 4,
@@ -119,7 +119,7 @@
   "speed" : 104,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 33,
   "id" : 2211,
   "inversionsNumber" : 3,
@@ -139,7 +139,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 62,
   "id" : 201,
   "inversionsNumber" : 0,
@@ -159,7 +159,7 @@
   "speed" : 132,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 37,
   "id" : 2210,
   "inversionsNumber" : 2,
@@ -179,7 +179,7 @@
   "speed" : 92,
   "status" : "status.operating"
 }, {
-  "country" : "country.poland",
+  "country" : "poland",
   "height" : 77,
   "id" : 2245,
   "inversionsNumber" : 1,
@@ -199,7 +199,7 @@
   "speed" : 142,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 2209,
   "inversionsNumber" : 3,
@@ -219,7 +219,7 @@
   "speed" : 84,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 70,
   "id" : 979,
   "inversionsNumber" : 0,
@@ -239,7 +239,7 @@
   "speed" : 132,
   "status" : "status.operating"
 }, {
-  "country" : "country.poland",
+  "country" : "poland",
   "height" : 40,
   "id" : 2247,
   "inversionsNumber" : 3,
@@ -259,7 +259,7 @@
   "speed" : 95,
   "status" : "status.operating"
 }, {
-  "country" : "country.uae",
+  "country" : "uae",
   "height" : 63,
   "id" : 2461,
   "inversionsNumber" : 1,
@@ -279,7 +279,7 @@
   "speed" : 120,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 34,
   "id" : 2469,
   "inversionsNumber" : 3,
@@ -299,7 +299,7 @@
   "speed" : 84,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 70,
   "id" : 1619,
   "inversionsNumber" : 0,
@@ -319,7 +319,7 @@
   "speed" : 129,
   "status" : "status.operating"
 }, {
-  "country" : "country.denmark",
+  "country" : "denmark",
   "height" : 31,
   "id" : 1259,
   "inversionsNumber" : 0,
@@ -339,7 +339,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.sweden",
+  "country" : "sweden",
   "height" : 36,
   "id" : 235,
   "inversionsNumber" : 0,
@@ -359,7 +359,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.italy",
+  "country" : "italy",
   "height" : 55,
   "id" : 1625,
   "inversionsNumber" : 2,
@@ -379,7 +379,7 @@
   "speed" : 110,
   "status" : "status.operating"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 32,
   "id" : 1174,
   "inversionsNumber" : 0,
@@ -399,7 +399,7 @@
   "speed" : 87,
   "status" : "status.operating"
 }, {
-  "country" : "country.italy",
+  "country" : "italy",
   "height" : 50,
   "id" : 84,
   "inversionsNumber" : 6,
@@ -419,7 +419,7 @@
   "speed" : 104,
   "status" : "status.operating"
 }, {
-  "country" : "country.france",
+  "country" : "france",
   "height" : 42,
   "id" : 1802,
   "inversionsNumber" : 6,
@@ -439,7 +439,7 @@
   "speed" : 92,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 73,
   "id" : 34,
   "inversionsNumber" : 0,
@@ -459,7 +459,7 @@
   "speed" : 127,
   "status" : "status.operating"
 }, {
-  "country" : "country.canada",
+  "country" : "canada",
   "height" : 70,
   "id" : 1252,
   "inversionsNumber" : 0,
@@ -479,7 +479,7 @@
   "speed" : 124,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 43,
   "id" : 2364,
   "inversionsNumber" : 4,
@@ -499,7 +499,7 @@
   "speed" : 97,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 32,
   "id" : 1314,
   "inversionsNumber" : 0,
@@ -519,7 +519,7 @@
   "speed" : 87,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 34,
   "id" : 732,
   "inversionsNumber" : 6,
@@ -539,7 +539,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 2205,
   "inversionsNumber" : 3,
@@ -559,7 +559,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 35,
   "id" : 3880,
   "inversionsNumber" : 3,
@@ -579,7 +579,7 @@
   "speed" : 84,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 32,
   "id" : 2095,
   "inversionsNumber" : 4,
@@ -599,7 +599,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 40,
   "id" : 2113,
   "inversionsNumber" : 3,
@@ -619,7 +619,7 @@
   "speed" : 95,
   "status" : "status.operating"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 32,
   "id" : 2213,
   "inversionsNumber" : 2,
@@ -639,7 +639,7 @@
   "speed" : 87,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 42,
   "id" : 304,
   "inversionsNumber" : 6,
@@ -659,7 +659,7 @@
   "speed" : 92,
   "status" : "status.operating"
 }, {
-  "country" : "country.canada",
+  "country" : "canada",
   "height" : 44,
   "id" : 749,
   "inversionsNumber" : 3,
@@ -679,7 +679,7 @@
   "speed" : 97,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.sweden",
+  "country" : "sweden",
   "height" : 56,
   "id" : 2183,
   "inversionsNumber" : 3,
@@ -699,7 +699,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 1622,
   "inversionsNumber" : 0,
@@ -719,7 +719,7 @@
   "speed" : 82,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 559,
   "inversionsNumber" : 0,
@@ -739,7 +739,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 37,
   "id" : 1272,
   "inversionsNumber" : 6,
@@ -759,7 +759,7 @@
   "speed" : 93,
   "status" : "status.operating"
 }, {
-  "country" : "country.poland",
+  "country" : "poland",
   "height" : 39,
   "id" : 2833,
   "inversionsNumber" : 4,
@@ -779,7 +779,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 38,
   "id" : 2201,
   "inversionsNumber" : 0,
@@ -799,7 +799,7 @@
   "speed" : 103,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 26,
   "id" : 495,
   "inversionsNumber" : 0,
@@ -819,7 +819,7 @@
   "speed" : 77,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 25,
   "id" : 2377,
   "inversionsNumber" : 1,
@@ -839,7 +839,7 @@
   "speed" : 78,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 30,
   "id" : 3154,
   "inversionsNumber" : 0,
@@ -859,7 +859,7 @@
   "speed" : 88,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 595,
   "inversionsNumber" : 0,
@@ -879,7 +879,7 @@
   "speed" : 64,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 43,
   "id" : 2821,
   "inversionsNumber" : 4,
@@ -899,7 +899,7 @@
   "speed" : 107,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 45,
   "id" : 2106,
   "inversionsNumber" : 3,
@@ -919,7 +919,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 30,
   "id" : 189,
   "inversionsNumber" : 0,
@@ -939,7 +939,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 48,
   "id" : 1396,
   "inversionsNumber" : 5,
@@ -959,7 +959,7 @@
   "speed" : 105,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 27,
   "id" : 403,
   "inversionsNumber" : 4,
@@ -979,7 +979,7 @@
   "speed" : 93,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 50,
   "id" : 560,
   "inversionsNumber" : 3,
@@ -999,7 +999,7 @@
   "speed" : 101,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 60,
   "id" : 2055,
   "inversionsNumber" : 0,
@@ -1019,7 +1019,7 @@
   "speed" : 120,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 29,
   "id" : 147,
   "inversionsNumber" : 4,
@@ -1039,7 +1039,7 @@
   "speed" : 77,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 46,
   "id" : 801,
   "inversionsNumber" : 0,
@@ -1059,7 +1059,7 @@
   "speed" : 105,
   "status" : "status.operating"
 }, {
-  "country" : "country.france",
+  "country" : "france",
   "height" : 12,
   "id" : 2115,
   "inversionsNumber" : 0,
@@ -1079,7 +1079,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.france",
+  "country" : "france",
   "height" : 31,
   "id" : 2809,
   "inversionsNumber" : 3,
@@ -1099,7 +1099,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 656,
   "inversionsNumber" : 3,
@@ -1119,7 +1119,7 @@
   "speed" : 81,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 45,
   "id" : 920,
   "inversionsNumber" : 6,
@@ -1139,7 +1139,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 79,
   "id" : 637,
   "inversionsNumber" : 0,
@@ -1159,7 +1159,7 @@
   "speed" : 130,
   "status" : "status.operating"
 }, {
-  "country" : "country.sweden",
+  "country" : "sweden",
   "height" : 32,
   "id" : 1036,
   "inversionsNumber" : 0,
@@ -1179,7 +1179,7 @@
   "speed" : 90,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 17,
   "id" : 388,
   "inversionsNumber" : 0,
@@ -1199,7 +1199,7 @@
   "speed" : 66,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 17,
   "id" : 389,
   "inversionsNumber" : 0,
@@ -1219,7 +1219,7 @@
   "speed" : 60,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 26,
   "id" : 1207,
   "inversionsNumber" : 0,
@@ -1239,7 +1239,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 46,
   "id" : 534,
   "inversionsNumber" : 4,
@@ -1259,7 +1259,7 @@
   "speed" : 96,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 21,
   "id" : 977,
   "inversionsNumber" : 0,
@@ -1279,7 +1279,7 @@
   "speed" : 72,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 20,
   "id" : 3047,
   "inversionsNumber" : 4,
@@ -1299,7 +1299,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 48,
   "id" : 195,
   "inversionsNumber" : 6,
@@ -1319,7 +1319,7 @@
   "speed" : 105,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 33,
   "id" : 138,
   "inversionsNumber" : 0,
@@ -1339,7 +1339,7 @@
   "speed" : 80,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.denmark",
+  "country" : "denmark",
   "height" : 20,
   "id" : 1410,
   "inversionsNumber" : 2,
@@ -1359,7 +1359,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.italy",
+  "country" : "italy",
   "height" : 33,
   "id" : 2598,
   "inversionsNumber" : 10,
@@ -1379,7 +1379,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 26,
   "id" : 442,
   "inversionsNumber" : 0,
@@ -1399,7 +1399,7 @@
   "speed" : 50,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 34,
   "id" : 1626,
   "inversionsNumber" : 3,
@@ -1419,7 +1419,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 24,
   "id" : 1898,
   "inversionsNumber" : 3,
@@ -1439,7 +1439,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 41,
   "id" : 1820,
   "inversionsNumber" : 1,
@@ -1459,7 +1459,7 @@
   "speed" : 103,
   "status" : "status.operating"
 }, {
-  "country" : "country.china",
+  "country" : "china",
   "height" : 40,
   "id" : 1979,
   "inversionsNumber" : 5,
@@ -1479,7 +1479,7 @@
   "speed" : 88,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 26,
   "id" : 710,
   "inversionsNumber" : 0,
@@ -1499,7 +1499,7 @@
   "speed" : 77,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 60,
   "id" : 270,
   "inversionsNumber" : 6,
@@ -1519,7 +1519,7 @@
   "speed" : 108,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 29,
   "id" : 181,
   "inversionsNumber" : 7,
@@ -1539,7 +1539,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 8,
   "id" : 1989,
   "inversionsNumber" : 0,
@@ -1559,7 +1559,7 @@
   "speed" : 36,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 22,
   "id" : 2185,
   "inversionsNumber" : 0,
@@ -1579,7 +1579,7 @@
   "speed" : 71,
   "status" : "status.operating"
 }, {
-  "country" : "country.italy",
+  "country" : "italy",
   "height" : 35,
   "id" : 2000,
   "inversionsNumber" : 1,
@@ -1599,7 +1599,7 @@
   "speed" : 95,
   "status" : "status.operating"
 }, {
-  "country" : "country.china",
+  "country" : "china",
   "height" : 35,
   "id" : 1980,
   "inversionsNumber" : 4,
@@ -1619,7 +1619,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 46,
   "id" : 2179,
   "inversionsNumber" : 1,
@@ -1639,7 +1639,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 65,
   "id" : 129,
   "inversionsNumber" : 0,
@@ -1659,7 +1659,7 @@
   "speed" : 120,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 42,
   "id" : 41,
   "inversionsNumber" : 1,
@@ -1679,7 +1679,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 63,
   "id" : 1785,
   "inversionsNumber" : 0,
@@ -1699,7 +1699,7 @@
   "speed" : 119,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 21,
   "id" : 131,
   "inversionsNumber" : 0,
@@ -1719,7 +1719,7 @@
   "speed" : 98,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 517,
   "inversionsNumber" : 4,
@@ -1739,7 +1739,7 @@
   "speed" : 97,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 46,
   "id" : 3055,
   "inversionsNumber" : 1,
@@ -1759,7 +1759,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 20,
   "id" : 1648,
   "inversionsNumber" : 0,
@@ -1779,7 +1779,7 @@
   "speed" : 67,
   "status" : "status.operating"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 23,
   "id" : 753,
   "inversionsNumber" : 0,
@@ -1799,7 +1799,7 @@
   "speed" : 70,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 28,
   "id" : 19,
   "inversionsNumber" : 0,
@@ -1819,7 +1819,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.canada",
+  "country" : "canada",
   "height" : 28,
   "id" : 706,
   "inversionsNumber" : 0,
@@ -1839,7 +1839,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.denmark",
+  "country" : "denmark",
   "height" : 19,
   "id" : 2072,
   "inversionsNumber" : 0,
@@ -1859,7 +1859,7 @@
   "speed" : 67,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 11,
   "id" : 2374,
   "inversionsNumber" : 0,
@@ -1879,7 +1879,7 @@
   "speed" : 32,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 27,
   "id" : 1141,
   "inversionsNumber" : 0,
@@ -1899,7 +1899,7 @@
   "speed" : 44,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 27,
   "id" : 2109,
   "inversionsNumber" : 0,
@@ -1919,7 +1919,7 @@
   "speed" : 44,
   "status" : "status.operating"
 }, {
-  "country" : "country.canada",
+  "country" : "canada",
   "height" : 32,
   "id" : 300,
   "inversionsNumber" : 5,
@@ -1939,7 +1939,7 @@
   "speed" : 81,
   "status" : "status.operating"
 }, {
-  "country" : "country.china",
+  "country" : "china",
   "height" : 30,
   "id" : 686,
   "inversionsNumber" : 10,
@@ -1959,7 +1959,7 @@
   "speed" : 72,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 29,
   "id" : 1909,
   "inversionsNumber" : 3,
@@ -1979,7 +1979,7 @@
   "speed" : 84,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 64,
   "id" : 263,
   "inversionsNumber" : 0,
@@ -1999,7 +1999,7 @@
   "speed" : 129,
   "status" : "status.closed.temporarily"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 35,
   "id" : 717,
   "inversionsNumber" : 5,
@@ -2019,7 +2019,7 @@
   "speed" : 82,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 45,
   "id" : 919,
   "inversionsNumber" : 1,
@@ -2039,7 +2039,7 @@
   "speed" : 89,
   "status" : "status.closed.temporarily"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 448,
   "inversionsNumber" : 0,
@@ -2059,7 +2059,7 @@
   "speed" : 77,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 245,
   "inversionsNumber" : 0,
@@ -2079,7 +2079,7 @@
   "speed" : 64,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 21,
   "id" : 2350,
   "inversionsNumber" : 0,
@@ -2099,7 +2099,7 @@
   "speed" : 65,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 20,
   "id" : 492,
   "inversionsNumber" : 1,
@@ -2119,7 +2119,7 @@
   "speed" : 80,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 26,
   "id" : 842,
   "inversionsNumber" : 0,
@@ -2139,7 +2139,7 @@
   "speed" : 81,
   "status" : "status.operating"
 }, {
-  "country" : "country.southkorea",
+  "country" : "southkorea",
   "height" : 22,
   "id" : 281,
   "inversionsNumber" : 0,
@@ -2159,7 +2159,7 @@
   "speed" : 75,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 47,
   "id" : 1908,
   "inversionsNumber" : 5,
@@ -2179,7 +2179,7 @@
   "speed" : 102,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 32,
   "id" : 1910,
   "inversionsNumber" : 0,
@@ -2199,7 +2199,7 @@
   "speed" : 55,
   "status" : "status.relocated"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 38,
   "id" : 234,
   "inversionsNumber" : 5,
@@ -2219,7 +2219,7 @@
   "speed" : 97,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 38,
   "id" : 1457,
   "inversionsNumber" : 5,
@@ -2239,7 +2239,7 @@
   "speed" : 89,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 19,
   "id" : 429,
   "inversionsNumber" : 0,
@@ -2259,7 +2259,7 @@
   "speed" : 64,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 36,
   "id" : 917,
   "inversionsNumber" : 0,
@@ -2279,7 +2279,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 12,
   "id" : 2110,
   "inversionsNumber" : 0,
@@ -2299,7 +2299,7 @@
   "speed" : 54,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 62,
   "id" : 2268,
   "inversionsNumber" : 4,
@@ -2319,7 +2319,7 @@
   "speed" : 119,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 39,
   "id" : 404,
   "inversionsNumber" : 2,
@@ -2339,7 +2339,7 @@
   "speed" : 96,
   "status" : "status.operating"
 }, {
-  "country" : "country.poland",
+  "country" : "poland",
   "height" : 63,
   "id" : 2832,
   "inversionsNumber" : 3,
@@ -2359,7 +2359,7 @@
   "speed" : 121,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 50,
   "id" : 2206,
   "inversionsNumber" : 0,
@@ -2379,7 +2379,7 @@
   "speed" : 118,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 76,
   "id" : 716,
   "inversionsNumber" : 2,
@@ -2399,7 +2399,7 @@
   "speed" : 126,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 99,
   "id" : 2270,
   "inversionsNumber" : 0,
@@ -2419,7 +2419,7 @@
   "speed" : 153,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 55,
   "id" : 370,
   "inversionsNumber" : 0,
@@ -2439,7 +2439,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 32,
   "id" : 861,
   "inversionsNumber" : 2,
@@ -2459,7 +2459,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 15,
   "id" : 2286,
   "inversionsNumber" : 0,
@@ -2479,7 +2479,7 @@
   "speed" : 64,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 34,
   "id" : 2229,
   "inversionsNumber" : 3,
@@ -2499,7 +2499,7 @@
   "speed" : 87,
   "status" : "status.operating"
 }, {
-  "country" : "country.china",
+  "country" : "china",
   "height" : 24,
   "id" : 2261,
   "inversionsNumber" : 0,
@@ -2519,7 +2519,7 @@
   "speed" : 95,
   "status" : "status.operating"
 }, {
-  "country" : "country.sweden",
+  "country" : "sweden",
   "height" : 56,
   "id" : 2183,
   "inversionsNumber" : 3,
@@ -2539,7 +2539,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 40,
   "id" : 3286,
   "inversionsNumber" : 3,
@@ -2559,7 +2559,7 @@
   "speed" : 93,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 93,
   "id" : 1783,
   "inversionsNumber" : 0,
@@ -2579,7 +2579,7 @@
   "speed" : 145,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 30,
   "id" : 2192,
   "inversionsNumber" : 0,
@@ -2599,7 +2599,7 @@
   "speed" : 117,
   "status" : "status.operating"
 }, {
-  "country" : "country.sweden",
+  "country" : "sweden",
   "height" : 41,
   "id" : 2135,
   "inversionsNumber" : 7,
@@ -2619,7 +2619,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 16,
   "id" : 258,
   "inversionsNumber" : 1,
@@ -2639,7 +2639,7 @@
   "speed" : 60,
   "status" : "status.operating"
 }, {
-  "country" : "country.spain",
+  "country" : "spain",
   "height" : 76,
   "id" : 2041,
   "inversionsNumber" : 0,
@@ -2659,7 +2659,7 @@
   "speed" : 134,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 33,
   "id" : 2111,
   "inversionsNumber" : 3,
@@ -2679,7 +2679,7 @@
   "speed" : 110,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 55,
   "id" : 2204,
   "inversionsNumber" : 1,
@@ -2699,7 +2699,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 54,
   "id" : 3068,
   "inversionsNumber" : 2,
@@ -2719,7 +2719,7 @@
   "speed" : 117,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 53,
   "id" : 178,
   "inversionsNumber" : 2,
@@ -2739,7 +2739,7 @@
   "speed" : 122,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 38,
   "id" : 2354,
   "inversionsNumber" : 5,
@@ -2759,7 +2759,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 128,
   "id" : 175,
   "inversionsNumber" : 0,
@@ -2779,7 +2779,7 @@
   "speed" : 192,
   "status" : "status.retracked"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 61,
   "id" : 2233,
   "inversionsNumber" : 0,
@@ -2799,7 +2799,7 @@
   "speed" : 115,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 94,
   "id" : 187,
   "inversionsNumber" : 0,
@@ -2819,7 +2819,7 @@
   "speed" : 150,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 30,
   "id" : 2296,
   "inversionsNumber" : 3,
@@ -2839,7 +2839,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 30,
   "id" : 2137,
   "inversionsNumber" : 14,
@@ -2859,7 +2859,7 @@
   "speed" : 85,
   "status" : "status.operating"
 }, {
-  "country" : "country.canada",
+  "country" : "canada",
   "height" : 93,
   "id" : 2058,
   "inversionsNumber" : 0,
@@ -2879,7 +2879,7 @@
   "speed" : 148,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 46,
   "id" : 284,
   "inversionsNumber" : 7,
@@ -2899,7 +2899,7 @@
   "speed" : 96,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 52,
   "id" : 314,
   "inversionsNumber" : 4,
@@ -2919,7 +2919,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 55,
   "id" : 2898,
   "inversionsNumber" : 3,
@@ -2939,7 +2939,7 @@
   "speed" : 107,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 47,
   "id" : 3144,
   "inversionsNumber" : 4,
@@ -2959,7 +2959,7 @@
   "speed" : 112,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 139,
   "id" : 170,
   "inversionsNumber" : 0,
@@ -2979,7 +2979,7 @@
   "speed" : 206,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 13,
   "id" : 59,
   "inversionsNumber" : 4,
@@ -2999,7 +2999,7 @@
   "speed" : 81,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 52,
   "id" : 2136,
   "inversionsNumber" : 6,
@@ -3019,7 +3019,7 @@
   "speed" : 108,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 26,
   "id" : 387,
   "inversionsNumber" : 4,
@@ -3039,7 +3039,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 63,
   "id" : 932,
   "inversionsNumber" : 2,
@@ -3059,7 +3059,7 @@
   "speed" : 115,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 49,
   "id" : 172,
   "inversionsNumber" : 1,
@@ -3079,7 +3079,7 @@
   "speed" : 180,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 47,
   "id" : 205,
   "inversionsNumber" : 0,
@@ -3099,7 +3099,7 @@
   "speed" : 106,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 34,
   "id" : 324,
   "inversionsNumber" : 0,
@@ -3119,7 +3119,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 43,
   "id" : 282,
   "inversionsNumber" : 7,
@@ -3139,7 +3139,7 @@
   "speed" : 96,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 61,
   "id" : 176,
   "inversionsNumber" : 1,
@@ -3159,7 +3159,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 38,
   "id" : 1635,
   "inversionsNumber" : 4,
@@ -3179,7 +3179,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 62,
   "id" : 201,
   "inversionsNumber" : 0,
@@ -3199,7 +3199,7 @@
   "speed" : 132,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 46,
   "id" : 289,
   "inversionsNumber" : 7,
@@ -3219,7 +3219,7 @@
   "speed" : 105,
   "status" : "status.operating"
 }, {
-  "country" : "country.china",
+  "country" : "china",
   "height" : 34,
   "id" : 4020,
   "inversionsNumber" : 7,
@@ -3239,7 +3239,7 @@
   "speed" : 108,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 22,
   "id" : 2202,
   "inversionsNumber" : 0,
@@ -3259,7 +3259,7 @@
   "speed" : 71,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 97,
   "id" : 737,
   "inversionsNumber" : 0,
@@ -3279,7 +3279,7 @@
   "speed" : 153,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 73,
   "id" : 2292,
   "inversionsNumber" : 1,
@@ -3299,7 +3299,7 @@
   "speed" : 127,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 35,
   "id" : 3308,
   "inversionsNumber" : 5,
@@ -3319,7 +3319,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 31,
   "id" : 1880,
   "inversionsNumber" : 1,
@@ -3339,7 +3339,7 @@
   "speed" : 97,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 64,
   "id" : 2335,
   "inversionsNumber" : 4,
@@ -3359,7 +3359,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.finland",
+  "country" : "finland",
   "height" : 52,
   "id" : 2827,
   "inversionsNumber" : 4,
@@ -3379,7 +3379,7 @@
   "speed" : 106,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 33,
   "id" : 202,
   "inversionsNumber" : 7,
@@ -3399,7 +3399,7 @@
   "speed" : 107,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 315,
   "inversionsNumber" : 3,
@@ -3419,7 +3419,7 @@
   "speed" : 96,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 65,
   "id" : 3056,
   "inversionsNumber" : 2,
@@ -3439,7 +3439,7 @@
   "speed" : 122,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 25,
   "id" : 2849,
   "inversionsNumber" : 5,
@@ -3459,7 +3459,7 @@
   "speed" : 80,
   "status" : "status.operating"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 38,
   "id" : 2215,
   "inversionsNumber" : 2,
@@ -3479,7 +3479,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 39,
   "id" : 2028,
   "inversionsNumber" : 4,
@@ -3499,7 +3499,7 @@
   "speed" : 95,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 60,
   "id" : 270,
   "inversionsNumber" : 6,
@@ -3519,7 +3519,7 @@
   "speed" : 108,
   "status" : "status.operating"
 }, {
-  "country" : "country.netherlands",
+  "country" : "netherlands",
   "height" : 37,
   "id" : 2798,
   "inversionsNumber" : 5,
@@ -3539,7 +3539,7 @@
   "speed" : 92,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 91,
   "id" : 3066,
   "inversionsNumber" : 0,
@@ -3559,7 +3559,7 @@
   "speed" : 146,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 67,
   "id" : 2946,
   "inversionsNumber" : 9,
@@ -3579,7 +3579,7 @@
   "speed" : 120,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 2323,
   "inversionsNumber" : 0,
@@ -3599,7 +3599,7 @@
   "speed" : 95,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 20,
   "id" : 125,
   "inversionsNumber" : 0,
@@ -3619,7 +3619,7 @@
   "speed" : 110,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 35,
   "id" : 3308,
   "inversionsNumber" : 5,
@@ -3639,7 +3639,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 70,
   "id" : 186,
   "inversionsNumber" : 0,
@@ -3659,7 +3659,7 @@
   "speed" : 128,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 49,
   "id" : 494,
   "inversionsNumber" : 0,
@@ -3679,7 +3679,7 @@
   "speed" : 108,
   "status" : "status.operating"
 }, {
-  "country" : "country.belgium",
+  "country" : "belgium",
   "height" : 50,
   "id" : 2329,
   "inversionsNumber" : 0,
@@ -3699,7 +3699,7 @@
   "speed" : 113,
   "status" : "status.operating"
 }, {
-  "country" : "country.germany",
+  "country" : "germany",
   "height" : 53,
   "id" : 21,
   "inversionsNumber" : 0,
@@ -3719,7 +3719,7 @@
   "speed" : 120,
   "status" : "status.operating"
 }, {
-  "country" : "country.southkorea",
+  "country" : "southkorea",
   "height" : 56,
   "id" : 1476,
   "inversionsNumber" : 0,
@@ -3739,7 +3739,7 @@
   "speed" : 104,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 35,
   "id" : 2343,
   "inversionsNumber" : 3,
@@ -3759,7 +3759,7 @@
   "speed" : 84,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 68,
   "id" : 2269,
   "inversionsNumber" : 3,
@@ -3779,7 +3779,7 @@
   "speed" : 120,
   "status" : "status.operating"
 }, {
-  "country" : "country.spain",
+  "country" : "spain",
   "height" : 112,
   "id" : 2190,
   "inversionsNumber" : 0,
@@ -3799,7 +3799,7 @@
   "speed" : 180,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 15,
   "id" : 1032,
   "inversionsNumber" : 0,
@@ -3819,7 +3819,7 @@
   "speed" : 39,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 63,
   "id" : 344,
   "inversionsNumber" : 0,
@@ -3839,7 +3839,7 @@
   "speed" : 129,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 51,
   "id" : 2164,
   "inversionsNumber" : 7,
@@ -3859,7 +3859,7 @@
   "speed" : 110,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 53,
   "id" : 3048,
   "inversionsNumber" : 4,
@@ -3879,7 +3879,7 @@
   "speed" : 126,
   "status" : "status.operating"
 }, {
-  "country" : "country.spain",
+  "country" : "spain",
   "height" : 49,
   "id" : 62,
   "inversionsNumber" : 8,
@@ -3899,7 +3899,7 @@
   "speed" : 105,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 33,
   "id" : 302,
   "inversionsNumber" : 1,
@@ -3919,7 +3919,7 @@
   "speed" : 88,
   "status" : "status.operating"
 }, {
-  "country" : "country.uk",
+  "country" : "uk",
   "height" : 31,
   "id" : 1628,
   "inversionsNumber" : 3,
@@ -3939,7 +3939,7 @@
   "speed" : 89,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 35,
   "id" : 935,
   "inversionsNumber" : 2,
@@ -3959,7 +3959,7 @@
   "speed" : 74,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 468,
   "inversionsNumber" : 0,
@@ -3979,7 +3979,7 @@
   "speed" : 82,
   "status" : "status.operating"
 }, {
-  "country" : "country.france",
+  "country" : "france",
   "height" : 32,
   "id" : 128,
   "inversionsNumber" : 3,
@@ -3999,7 +3999,7 @@
   "speed" : 71,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 44,
   "id" : 924,
   "inversionsNumber" : 0,
@@ -4019,7 +4019,7 @@
   "speed" : 90,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 64,
   "id" : 2054,
   "inversionsNumber" : 4,
@@ -4039,7 +4039,7 @@
   "speed" : 98,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 23,
   "id" : 1145,
   "inversionsNumber" : 0,
@@ -4059,7 +4059,7 @@
   "speed" : 52,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 43,
   "id" : 2819,
   "inversionsNumber" : 7,
@@ -4079,7 +4079,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.uae",
+  "country" : "uae",
   "height" : 52,
   "id" : 1773,
   "inversionsNumber" : 0,
@@ -4099,7 +4099,7 @@
   "speed" : 240,
   "status" : "status.operating"
 }, {
-  "country" : "country.japan",
+  "country" : "japan",
   "height" : 43,
   "id" : 2043,
   "inversionsNumber" : 7,
@@ -4119,7 +4119,7 @@
   "speed" : 100,
   "status" : "status.operating"
 }, {
-  "country" : "country.canada",
+  "country" : "canada",
   "height" : 75,
   "id" : 2896,
   "inversionsNumber" : 4,
@@ -4139,7 +4139,7 @@
   "speed" : 130,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 47,
   "id" : 326,
   "inversionsNumber" : 4,
@@ -4159,7 +4159,7 @@
   "speed" : 112,
   "status" : "status.closed.definitely"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 33,
   "id" : 799,
   "inversionsNumber" : 5,
@@ -4179,7 +4179,7 @@
   "speed" : 81,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 24,
   "id" : 517,
   "inversionsNumber" : 4,
@@ -4199,7 +4199,7 @@
   "speed" : 97,
   "status" : "status.operating"
 }, {
-  "country" : "country.usa",
+  "country" : "usa",
   "height" : 19,
   "id" : 269,
   "inversionsNumber" : 0,

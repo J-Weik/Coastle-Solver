@@ -32,7 +32,7 @@ public class GameSimulator {
         return guesses;
     }
 
-    public class SimulatedAnswer {
+    public static class SimulatedAnswer {
         CoasterDB.Order country;
         CoasterDB.Order manufacturer;
         CoasterDB.Order seating;
@@ -69,25 +69,25 @@ public class GameSimulator {
         a.seating = Objects.equals(guess.seatingType, target.seatingType)
                 ? CoasterDB.Order.EQUAL : CoasterDB.Order.NOT_EQUAL;
 
-        a.inversions = Integer.compare(target.inversionsNumber, guess.inversionsNumber) == 0
+        a.inversions = (int) target.inversionsNumber == guess.inversionsNumber
                 ? CoasterDB.Order.EQUAL
                 : target.inversionsNumber > guess.inversionsNumber
                 ? CoasterDB.Order.GREATER_THAN
                 : CoasterDB.Order.LESS_THAN;
 
-        a.height = Integer.compare(target.height, guess.height) == 0
+        a.height = (int) target.height == guess.height
                 ? CoasterDB.Order.EQUAL
                 : target.height > guess.height
                 ? CoasterDB.Order.GREATER_THAN
                 : CoasterDB.Order.LESS_THAN;
 
-        a.length = Integer.compare(target.length, guess.length) == 0
+        a.length = (int) target.length == guess.length
                 ? CoasterDB.Order.EQUAL
                 : target.length > guess.length
                 ? CoasterDB.Order.GREATER_THAN
                 : CoasterDB.Order.LESS_THAN;
 
-        a.speed = Integer.compare(target.speed, guess.speed) == 0
+        a.speed = (int) target.speed == guess.speed
                 ? CoasterDB.Order.EQUAL
                 : target.speed > guess.speed
                 ? CoasterDB.Order.GREATER_THAN

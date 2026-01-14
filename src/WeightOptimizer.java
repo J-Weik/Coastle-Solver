@@ -3,10 +3,9 @@ import java.util.Random;
 public class WeightOptimizer {
 
     private static GameSimulator simulator;
-    private final Random random = new Random();
 
     public WeightOptimizer(GameSimulator simulator) {
-        this.simulator = simulator;
+        WeightOptimizer.simulator = simulator;
     }
 
     public static double evaluateWeights(CoasterDB db, Weights w) {

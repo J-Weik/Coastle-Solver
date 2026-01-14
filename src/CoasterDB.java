@@ -17,9 +17,10 @@ public class CoasterDB {
         try {
             List<Coaster> tempList = mapper.readValue(
                     new File(source),
-                    new TypeReference<List<Coaster>>() {}
+                    new TypeReference<>() {
+                    }
             );
-            coasters = new HashSet<Coaster>(tempList);
+            coasters = new HashSet<>(tempList);
         } catch (Exception e) {
             throw new RuntimeException("Fehler beim Einlesen der Coaster-JSON", e);
         }
@@ -33,56 +34,6 @@ public class CoasterDB {
         log = source.log;
         nullSafe = source.nullSafe;
         random = new Random(System.currentTimeMillis());
-    }
-
-    public void insertCoaster(Coaster coaster) {
-        coasters.add(coaster);
-    }
-
-    public void removeCoaster(Coaster coaster) {
-        coasters.remove(coaster);
-    }
-
-    public void removeUnknownCoasters() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.name.equals("Unknown"));
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have a name known");
-    }
-
-    public void removeUnknownHeight() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.height == null);
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have a height");
-    }
-
-    public void removeUnknownLength() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.length == null);
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have a length");
-    }
-
-    public void removeUnknownInversions() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.inversionsNumber == null);
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have inversions known");
-    }
-
-    public void removeUnknownSpeed() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.speed == null);
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have speed known");
-    }
-
-    public void removeUnknownSeating() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.seatingType == null);
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that don't have seating known");
-    }
-
-    public void removeUnrankedCoasters() {
-        int size = this.coasters.size();
-        this.coasters.removeIf(c -> c.rank == null);
-        if(log) System.out.println(size - this.coasters.size() + " coasters removed that aren't ranked");
     }
 
     public void removeUncompleteCoasters() {
@@ -285,7 +236,7 @@ public class CoasterDB {
                 .orElse(null);
     }
 
-    private class CoasterProfile {
+    private static class CoasterProfile {
         public double avgSpeed;
         public double avgHeight;
         public double avgLength;
@@ -363,25 +314,25 @@ public class CoasterDB {
         };
     }
 
-    public Coaster findCoasterById(int id) {
-        for (Coaster c : coasters) {
-            if (c.id == id) {
-                return c;
-            }
-        }
-        return null;
-    }
-
-    public Coaster findCoasterByName(String name) {
-        if (name == null) return null;
-
-        for (Coaster c : coasters) {
-            if (c.name != null && c.name.equalsIgnoreCase(name)) {
-                return c;
-            }
-        }
-        return null;
-    }
+//    public Coaster findCoasterById(int id) {
+//        for (Coaster c : coasters) {
+//            if (c.id == id) {
+//                return c;
+//            }
+//        }
+//        return null;
+//    }
+//
+//    public Coaster findCoasterByName(String name) {
+//        if (name == null) return null;
+//
+//        for (Coaster c : coasters) {
+//            if (c.name != null && c.name.equalsIgnoreCase(name)) {
+//                return c;
+//            }
+//        }
+//        return null;
+//    }
 
     public enum Order {
         EQUAL,
