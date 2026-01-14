@@ -80,7 +80,7 @@
   "status" : "status.operating"
 }, {
   "country" : "country.usa",
-  "height" : null,
+  "height" : 11,
   "id" : 5612,
   "inversionsNumber" : 0,
   "launch" : "launch.tire",

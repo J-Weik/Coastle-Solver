@@ -21,18 +21,11 @@ public class WeightOptimizer {
     public Weights optimizeWeights(CoasterDB db) {
         Random r = new Random();
 
-        Weights best = new Weights();
-        best.country = 1.0;
-        best.manufacturer = 1.0;
-        best.seating = 0.8;
-        best.speed = 1.2;
-        best.height = 1.0;
-        best.length = 0.7;
-        best.inversions = 0.5;
+        Weights best = new Weights(7.63067057117832,2.1315017107523193,2.238006451422379,4.478439068601903,0.003187387962721118,0.5690990135185374,0.0935383565769079);
 
         double bestScore = evaluateWeights(db, best);
 
-        for (int gen = 0; gen < 200; gen++) {
+        for (int gen = 0; gen < 30; gen++) {
             System.out.println("Gen: " + gen);
             for (int i = 0; i < 30; i++) {
                 Weights candidate = mutate(best, r);
@@ -48,20 +41,25 @@ public class WeightOptimizer {
                 }
             }
         }
-
+        System.out.println("Best score: " + bestScore);
         return best;
     }
 
     public static Weights mutate(Weights base, Random r) {
         Weights w = base.copy();
 
-        w.country      += r.nextGaussian() * 0.15;
-        w.manufacturer += r.nextGaussian() * 0.15;
-        w.seating      += r.nextGaussian() * 0.15;
-        w.speed        += r.nextGaussian() * 0.15;
-        w.height       += r.nextGaussian() * 0.15;
-        w.length       += r.nextGaussian() * 0.15;
-        w.inversions   += r.nextGaussian() * 0.15;
+        int pick = r.nextInt(7);
+        double delta = r.nextGaussian() * 1.3;
+
+        switch (pick) {
+            case 0 -> w.country += delta;
+            case 1 -> w.manufacturer += delta;
+            case 2 -> w.seating += delta;
+            case 3 -> w.speed += delta;
+            case 4 -> w.height += delta;
+            case 5 -> w.length += delta;
+            case 6 -> w.inversions += delta;
+        }
 
         clamp(w);
         return w;
@@ -78,6 +76,12 @@ public class WeightOptimizer {
     }
 
     private static double clamp(double v) {
-        return Math.max(0.1, Math.min(5.0, v));
+        return Math.max(0.0001, Math.min(10.0, v));
     }
 }
+
+// Best score: 1.9626168224299065 easy
+//4.862045679222069,2.1315017107523193,3.5917418806495247,1.943243644291043,0.2851287747378798,0.0935383565769079,0.003187387962721118
+
+// Best score: 2.466666666666667 hard
+// 7.63067057117832,2.1315017107523193,2.238006451422379,4.478439068601903,0.003187387962721118,0.5690990135185374,0.0935383565769079

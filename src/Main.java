@@ -13,9 +13,8 @@ public class Main {
 
         // ------------------------SETTINGS-------------------------
         final guessedCoasterChooser chooser = guessedCoasterChooser.BEST_SPLITTER;
-        final dataset data = dataset.HARD;
-        final boolean outputRemovedCoasterInfo = false;
-        boolean removeUnrankedCoasters = false;
+        final dataset data = dataset.EASY;
+        final boolean outputRemovedCoasterInfo = true;
         boolean removeInclompleteCoasters = true;
         boolean startWithDiamondback = false;
 
@@ -29,7 +28,10 @@ public class Main {
             default -> DBPath = BASE_PATH + "all.json";
         }
         CoasterDB db = new CoasterDB(DBPath, outputRemovedCoasterInfo, !removeInclompleteCoasters);
-        Weights weights = new Weights(1.2,1,0.7,0.5,1,0.8,1);
+        CoasterDB posGuesses = new CoasterDB(BASE_PATH + "all.json", false, false);
+        posGuesses.removeUncompleteCoasters();
+        Weights hardWeights = new Weights(7.63067057117832,2.1315017107523193,2.238006451422379,4.478439068601903,0.003187387962721118,0.5690990135185374,0.0935383565769079);
+        Weights easyWeights = new Weights(4.862045679222069,2.1315017107523193,3.5917418806495247,1.943243644291043,0.2851287747378798,0.0935383565769079,0.003187387962721118);
 
         // remove bad coasters if they have a chance to be chosen as a guess
         if (chooser == guessedCoasterChooser.AVERAGE_COASTER
@@ -38,15 +40,18 @@ public class Main {
 
         // remove bad coasters
         if(removeInclompleteCoasters) db.removeUncompleteCoasters();
-        if(removeUnrankedCoasters) db.removeUnrankedCoasters();
+
+//        WeightOptimizer wo = new WeightOptimizer(new GameSimulator(db));
+//        System.out.println(wo.optimizeWeights(db));
 
         // Choose Diamondback as first coaster
         Coaster curCoaster;
-        if (startWithDiamondback) curCoaster = db.findCoaster("Diamondback");
+        if (startWithDiamondback) curCoaster = db.findCoaster("Mako");
         else if (chooser == guessedCoasterChooser.TOP_RATED) curCoaster = db.getTopCoasters(1).getFirst();
         else if (chooser == guessedCoasterChooser.RANDOM) curCoaster = db.randomCoaster();
-        else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = db.findMostAverageCoaster();
-        else if (chooser == guessedCoasterChooser.BEST_SPLITTER) curCoaster = db.findBestSplitCoaster(weights);
+        else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = posGuesses.findMostAverageCoaster();
+        else if (chooser == guessedCoasterChooser.BEST_SPLITTER && data == dataset.HARD) curCoaster = posGuesses.findBestSplitCoaster(hardWeights);
+        else if (chooser == guessedCoasterChooser.BEST_SPLITTER && data == dataset.EASY) curCoaster = posGuesses.findBestSplitCoaster(easyWeights);
         else curCoaster = db.randomCoaster();
 
         CoasterDB.Order countryOrder;
@@ -86,7 +91,9 @@ public class Main {
             }
             if (chooser == guessedCoasterChooser.TOP_RATED) curCoaster = db.getTopCoasters(1).getFirst();
             else if (chooser == guessedCoasterChooser.RANDOM) curCoaster = db.randomCoaster();
-            else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = curCoaster = db.findMostAverageCoaster();
+            else if (chooser == guessedCoasterChooser.AVERAGE_COASTER) curCoaster = db.findMostAverageCoaster();
+            else if (chooser == guessedCoasterChooser.BEST_SPLITTER && data == dataset.HARD) curCoaster = db.findBestSplitCoaster(hardWeights);
+            else if (chooser == guessedCoasterChooser.BEST_SPLITTER && data == dataset.EASY) curCoaster = db.findBestSplitCoaster(easyWeights);
             else curCoaster = db.randomCoaster();
 
             if(db.coasters.size() == 1) {

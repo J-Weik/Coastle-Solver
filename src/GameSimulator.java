@@ -32,16 +32,6 @@ public class GameSimulator {
         return guesses;
     }
 
-    public double evaluateWeights(Weights w) {
-        int total = 0;
-
-        for (Coaster target : originalDB.coasters) {
-            total += simulateGame(target, w);
-        }
-
-        return (double) total / originalDB.coasters.size();
-    }
-
     public class SimulatedAnswer {
         CoasterDB.Order country;
         CoasterDB.Order manufacturer;

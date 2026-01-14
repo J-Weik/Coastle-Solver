@@ -101,7 +101,7 @@ public class CoasterDB {
     }
 
     public Coaster randomCoaster() {
-        int index = this.random.nextInt(0, this.coasters.size());
+        int index = this.random.nextInt(1, this.coasters.size());
         Coaster[] coasterArray = coasters.toArray(new Coaster[0]);
         return coasterArray[index];
     }

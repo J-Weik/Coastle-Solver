@@ -22,7 +22,7 @@ public class Weights {
         return w;
     }
 
-    public Weights(double speed, double height, double length, double inversions, double manufacturer, double seating, double country) {
+    public Weights(double country, double manufacturer, double seating, double inversions, double speed, double height, double length) {
         this.speed = speed;
         this.height = height;
         this.length = length;
@@ -35,6 +35,6 @@ public class Weights {
     public Weights() {}
 
     public String toString() {
-        return "Country: " + this.country +"\n Manufacturer: " + this.manufacturer +"\n Seating: " + this.seating +"\n Inversioons: " + this.inversions +"\n Speed: " + this.speed +"\n Height: " + this.height +"\n Length: " + this.length ;
+        return this.country +"," + this.manufacturer +"," + this.seating +"," + this.inversions +"," + this.speed +"," + this.height +"," + this.length ;
     }
 }
