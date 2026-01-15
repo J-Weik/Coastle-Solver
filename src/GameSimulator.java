@@ -1,4 +1,5 @@
 import java.util.Objects;
+import java.util.Set;
 
 public class GameSimulator {
 
@@ -122,5 +123,31 @@ public class GameSimulator {
             if (guesses > 7) break; // safety
         }
         return guesses;
+    }
+
+    public double averageRemainingAfterFirstGuess(
+            Coaster spalter,
+            CoasterDB oGpool,
+            CoasterDB oGallPos
+    ) {
+        int totalRemaining = 0;
+
+        for (Coaster target : oGpool.coasters) {
+            CoasterDB pool = new CoasterDB(oGpool);
+
+            SimulatedAnswer a = simulateAnswer(spalter, target);
+
+            pool.keepCountry(a.country, spalter.country);
+            pool.keepManufacturer(a.manufacturer, spalter.manufacturer);
+            pool.keepSeatingType(a.seating, spalter.seatingType);
+            pool.keepInversions(a.inversions, spalter.inversionsNumber);
+            pool.keepHeight(a.height, spalter.height);
+            pool.keepLength(a.length, spalter.length);
+            pool.keepSpeed(a.speed, spalter.speed);
+
+            totalRemaining += pool.coasters.size();
+        }
+
+        return (double) totalRemaining / oGpool.coasters.size();
     }
 }

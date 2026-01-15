@@ -59,8 +59,26 @@ public class Main {
         // remove bad coasters
         if(removeIncompleteCoasters) db.removeUncompleteCoasters();
 
+//        GameSimulator g = new GameSimulator(db);
+//        double best = Integer.MAX_VALUE;
+//        double avgRemaining=100;
+//        Coaster bestC = null;
+//        int i=0;
+//        for(Coaster c:posGuesses.coasters) {
+//            avgRemaining = g.averageRemainingAfterFirstGuess(c,db,posGuesses);
+//            if (avgRemaining < best) {
+//                best = avgRemaining;
+//                bestC = c;
+//            }
+//            System.out.println(i++);
+//        }
+
+//        System.out.println("Best coaster: " + bestC + "mit durchscbhittlich " + best + "Remaining");
+
 //        WeightOptimizer wo = new WeightOptimizer(new GameSimulator(db));
 //        System.out.println(wo.optimizeWeights(db));
+
+
 
         // Choose Diamondback as first coaster
         Coaster curCoaster;
